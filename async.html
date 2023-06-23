@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        let input = prompt("Enter your Password: ");
+        function login() {//anonymous function
+            return new Promise(function(resolve, reject){
+            if (input == "JavaScriptCoding") {
+                setTimeout(function(){
+                    resolve("Access Granted!");
+                }, 3000); // 3 seconds
+            }
+            else {
+                setTimeout(function(){
+                    reject("Access Denied!");
+                }, 3000);
+            }
+            });
+        }
+        async function asyncCall(){
+            const output = await login();
+            alert(output);
+        }
+        asyncCall().catch(error => alert(error));
+    </script>
+</html>
